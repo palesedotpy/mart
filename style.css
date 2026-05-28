@@ -1,0 +1,241 @@
+:root {
+      --paper: #f3eedb;
+      --ink: #776d66;
+      --ink-soft: #857a73;
+      --line: rgba(119,109,102,.22);
+      --veil: rgba(243, 238, 219, 0.26);
+      --panel: rgba(243, 238, 219, 0.18);
+      --shadow: rgba(90, 78, 65, 0.08);
+      --text-xl: clamp(2.2rem, 6vw, 4.5rem);
+      --text-lg: clamp(1.7rem, 3vw, 2rem);
+      --text-md: clamp(1.85rem, 3.2vw, 2.35rem);
+      --text-base: clamp(1rem, 1rem + .18vw, 1.18rem);
+      --text-sm: .96rem;
+      --content: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'EB Garamond', serif;
+      color: var(--ink);
+      background-color: var(--paper);
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(var(--veil), var(--veil)),
+        url('background.png');
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: -3;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,.12), rgba(0,0,0,.02));
+      pointer-events: none;
+      z-index: -2;
+    }
+    [data-theme="dark"] {
+      --ink: #e4d8cc;
+      --ink-soft: #d3c6ba;
+      --line: rgba(228,216,204,.20);
+      --veil: rgba(34, 31, 27, 0.24);
+      --panel: rgba(34, 31, 27, 0.16);
+      --shadow: rgba(0,0,0,.18);
+    }
+    a { color: inherit; text-decoration: none; }
+    button, select { font: inherit; color: inherit; }
+    .skip-link { position: absolute; left: -9999px; }
+    .skip-link:focus { left: 16px; top: 16px; background: white; padding: 8px 12px; z-index: 20; }
+
+    .top-controls {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 10;
+    }
+    .lang-select,
+    .theme-toggle,
+    .menu-toggle {
+      min-height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.34);
+      color: var(--ink);
+      backdrop-filter: blur(8px);
+    }
+    .lang-select {
+      padding: 0 14px;
+      min-width: 104px;
+      appearance: none;
+      background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+      background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      padding-right: 34px;
+    }
+    .theme-toggle,
+    .menu-toggle {
+      width: 44px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+    .menu-toggle { display: none; }
+
+    .page {
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+      padding: 54px 18px 70px;
+    }
+    .content {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 24px 40px;
+      position: relative;
+      isolation: isolate;
+    }
+    .content::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 18px 45px var(--shadow);
+      backdrop-filter: blur(1.5px);
+      z-index: -1;
+    }
+    header {
+      text-align: center;
+      padding-top: 170px;
+      margin-bottom: 42px;
+    }
+    h1 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: var(--text-xl);
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .meta {
+      margin-top: 18px;
+      font-size: var(--text-sm);
+      line-height: 1.8;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    nav {
+      max-width: 880px;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 34px;
+      font-size: var(--text-sm);
+      letter-spacing: .06em;
+    }
+    nav a {
+      display: inline-block;
+      position: relative;
+      padding-bottom: 6px;
+    }
+    nav a.active::after,
+    nav a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: currentColor;
+    }
+    main {
+      max-width: var(--content);
+      margin: 0 auto;
+      font-size: var(--text-base);
+      line-height: 1.58;
+    }
+    section { margin-bottom: 34px; }
+    h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: .06em;
+      color: var(--ink);
+    }
+    h2 { margin: 0 0 18px; font-size: var(--text-md); }
+    h3 { margin: 38px 0 14px; font-size: var(--text-lg); }
+    p { margin: 0 0 12px; color: var(--ink-soft); }
+    ul { list-style: none; margin: 16px 0 0; padding: 0; color: var(--ink-soft); }
+    li { margin: 4px 0; }
+    .italics { font-style: italic; }
+
+    @media (max-width: 900px) {
+      .page { padding-top: 28px; }
+      .content { padding: 22px 16px 26px; }
+      header { padding-top: 124px; }
+      nav ul { gap: 10px 18px; }
+      main { font-size: 1.06rem; }
+      body::before { background-position: center top; }
+    }
+    @media (max-width: 700px) {
+      .top-controls { left: 12px; right: 12px; justify-content: flex-end; }
+      .menu-toggle { display: grid; }
+      nav {
+        max-height: 0;
+        overflow: hidden;
+        margin-bottom: 0;
+        transition: max-height .28s ease, margin-bottom .28s ease;
+      }
+      nav.open {
+        max-height: 320px;
+        margin-bottom: 34px;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 14px;
+      }
+      .content {
+        padding-top: 16px;
+      }
+      header {
+        padding-top: 110px;
+        margin-bottom: 26px;
+      }
+    }
+    @media (max-width: 560px) {
+      .page { padding-inline: 10px; padding-bottom: 44px; }
+      .content::before { border-radius: 10px; }
+      h1 { letter-spacing: .05em; }
+      .top-controls { gap: 8px; }
+      .lang-select { min-width: 96px; }
+      body::before {
+        background-size: auto 100%;
+        background-position: center top;
+      }
+      main { font-size: 1rem; }
+    }

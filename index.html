@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Martina & Javier — Photo Background</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Vai al contenuto</a>
+
+  <div class="top-controls">
+    <select class="lang-select" aria-label="Select language" data-language>
+      <option value="it">Italiano</option>
+      <option value="en">English</option>
+    </select>
+    <button class="menu-toggle" type="button" aria-label="Apri menu" data-menu-toggle>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambia tema">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+
+  <div class="page">
+    <div class="content">
+      <header>
+        <h1>Martina &amp; Javier</h1>
+        <div class="meta" data-i18n="heroMeta">18.07.2026<br>52 days to go!</div>
+      </header>
+
+      <nav aria-label="Navigazione principale" data-nav>
+        <ul>
+          <li><a href="#home" data-i18n="navHome">Home</a></li>
+          <li><a href="#story" data-i18n="navStory">La nostra storia</a></li>
+          <li><a href="#party" data-i18n="navParty">La Festa</a></li>
+          <li><a href="#location" data-i18n="navLocation">La location</a></li>
+          <li><a class="active" href="#oltre" data-i18n="navBeyond">Oltre la festa</a></li>
+          <li><a href="#alloggi" data-i18n="navStay">Alloggi</a></li>
+          <li><a href="#rsvp" data-i18n="navRsvp">RSVP</a></li>
+        </ul>
+      </nav>
+
+      <main id="content">
+        <section id="oltre">
+          <h2 data-i18n="title">Perché accontentarsi di una sera sola?</h2>
+          <p data-i18n="intro1">Per chi desidera fare del weekend una piccola vacanza, Martina, Javier e Mia si fermeranno in zona per 2-3 notti — con piacere di trascorrere del tempo insieme anche fuori dalla festa.</p>
+          <p data-i18n="intro2">Non c'è un programma rigido. C'è però tanta voglia di stare insieme, e qualche idea per chi vuole unirsi.</p>
+        </section>
+
+        <section>
+          <h3 data-i18n="pizzaTitle">🍕 Pizza Night — 17 Luglio</h3>
+          <p data-i18n="pizzaText">Per chi riesce ad arrivare un giorno prima, la sera del 17 luglio organizziamo una cena informale a base di pizza. Il modo migliore per ritrovarsi con calma, prima della festa vera e propria.</p>
+          <p class="italics" data-i18n="pizzaNote">Fatecelo sapere nell'RSVP se prevedete di essere con noi anche il 17.</p>
+        </section>
+
+        <section>
+          <h3 data-i18n="relaxTitle">😌 Per chi vuole rilassarsi</h3>
+          <p data-i18n="relaxText">La casa è grande e il giardino è bellissimo. Chi vuole, può semplicemente godersi la pace della campagna umbra. Vicino casa c'è un villaggio con piscina, potremo fare passeggiate tra gli ulivi, o una serata al barbecue sotto le stelle.</p>
+        </section>
+
+        <section>
+          <h3 data-i18n="gamesTitle">🎮 Per chi non riesce a stare fermo</h3>
+          <p data-i18n="gamesText1">Se conoscete Martina, non vi sorprenderà sapere che ci sarà un angolo giochi ben fornito. Giochi da tavolo, calcetto, ping pong — con la giusta dose di competizione amichevole.</p>
+          <p data-i18n="gamesText2">Per chi preferisce uscire, potremo organizzare anche bagni notturni alle terme e/o qualche gita nei borghi medievali della zona, se il gruppo ne ha voglia.</p>
+        </section>
+
+        <section>
+          <h3 data-i18n="visitTitle">🗺️ Cosa visitare nei dintorni</h3>
+          <p data-i18n="visitText">L'Umbria è una delle regioni più belle d'Italia, e siamo nel mezzo di tutto:</p>
+          <ul>
+            <li data-i18n="visit1">- Giove (5 min)</li>
+            <li data-i18n="visit2">- Bomarzo e il Parco dei Mostri (10 min)</li>
+            <li data-i18n="visit3">- Amelia (20 min)</li>
+            <li data-i18n="visit4">- Viterbo (30 min)</li>
+            <li data-i18n="visit5">- Orvieto (35 min)</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      it: {
+        heroMeta: '18.07.2026<br>52 days to go!',
+        navHome: 'Home',
+        navStory: 'La nostra storia',
+        navParty: 'La Festa',
+        navLocation: 'La location',
+        navBeyond: 'Oltre la festa',
+        navStay: 'Alloggi',
+        navRsvp: 'RSVP',
+        title: 'Perché accontentarsi di una sera sola?',
+        intro1: 'Per chi desidera fare del weekend una piccola vacanza, Martina, Javier e Mia si fermeranno in zona per 2-3 notti — con piacere di trascorrere del tempo insieme anche fuori dalla festa.',
+        intro2: "Non c'è un programma rigido. C'è però tanta voglia di stare insieme, e qualche idea per chi vuole unirsi.",
+        pizzaTitle: '🍕 Pizza Night — 17 Luglio',
+        pizzaText: 'Per chi riesce ad arrivare un giorno prima, la sera del 17 luglio organizziamo una cena informale a base di pizza. Il modo migliore per ritrovarsi con calma, prima della festa vera e propria.',
+        pizzaNote: "Fatecelo sapere nell'RSVP se prevedete di essere con noi anche il 17.",
+        relaxTitle: '😌 Per chi vuole rilassarsi',
+        relaxText: "La casa è grande e il giardino è bellissimo. Chi vuole, può semplicemente godersi la pace della campagna umbra. Vicino casa c'è un villaggio con piscina, potremo fare passeggiate tra gli ulivi, o una serata al barbecue sotto le stelle.",
+        gamesTitle: '🎮 Per chi non riesce a stare fermo',
+        gamesText1: 'Se conoscete Martina, non vi sorprenderà sapere che ci sarà un angolo giochi ben fornito. Giochi da tavolo, calcetto, ping pong — con la giusta dose di competizione amichevole.',
+        gamesText2: 'Per chi preferisce uscire, potremo organizzare anche bagni notturni alle terme e/o qualche gita nei borghi medievali della zona, se il gruppo ne ha voglia.',
+        visitTitle: '🗺️ Cosa visitare nei dintorni',
+        visitText: "L'Umbria è una delle regioni più belle d'Italia, e siamo nel mezzo di tutto:",
+        visit1: '- Giove (5 min)',
+        visit2: '- Bomarzo e il Parco dei Mostri (10 min)',
+        visit3: '- Amelia (20 min)',
+        visit4: '- Viterbo (30 min)',
+        visit5: '- Orvieto (35 min)'
+      },
+      en: {
+        heroMeta: '18.07.2026<br>52 days to go!',
+        navHome: 'Home',
+        navStory: 'Our story',
+        navParty: 'The party',
+        navLocation: 'Location',
+        navBeyond: 'Beyond the wedding',
+        navStay: 'Stay',
+        navRsvp: 'RSVP',
+        title: 'Why settle for just one evening?',
+        intro1: 'For anyone who would like to turn the weekend into a little getaway, Martina, Javier, and Mia will be staying in the area for 2-3 nights — and would love to spend more time together beyond the celebration itself.',
+        intro2: 'There is no strict plan. Just a real desire to be together, plus a few ideas for anyone who wants to join in.',
+        pizzaTitle: '🍕 Pizza Night — 17 July',
+        pizzaText: 'For those arriving a day early, on the evening of 17 July we are planning an informal pizza dinner. It is the best way to meet up calmly before the main celebration.',
+        pizzaNote: 'Please mention it in your RSVP if you expect to join us on the 17th as well.',
+        relaxTitle: '😌 For those who want to unwind',
+        relaxText: 'The house is large and the garden is beautiful. Anyone who wants can simply enjoy the peace of the Umbrian countryside. Near the house there is a village with a pool, and we can take walks among the olive trees or have a barbecue evening under the stars.',
+        gamesTitle: '🎮 For those who cannot sit still',
+        gamesText1: 'If you know Martina, it will not surprise you to hear that there will be a well-stocked games corner. Board games, foosball, and table tennis — with the right amount of friendly competition.',
+        gamesText2: 'For those who prefer to go out, we may also organize late-night trips to the thermal baths and/or small outings to the medieval towns nearby, if the group feels like it.',
+        visitTitle: '🗺️ Places to visit nearby',
+        visitText: 'Umbria is one of the most beautiful regions in Italy, and we are right in the middle of everything:',
+        visit1: '- Giove (5 min)',
+        visit2: '- Bomarzo and the Park of Monsters (10 min)',
+        visit3: '- Amelia (20 min)',
+        visit4: '- Viterbo (30 min)',
+        visit5: '- Orvieto (35 min)'
+      }
+    };
+
+    const langSelect = document.querySelector('[data-language]');
+    const nav = document.querySelector('[data-nav]');
+    const menuToggle = document.querySelector('[data-menu-toggle]');
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    const root = document.documentElement;
+    let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+    function applyLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key]) el.innerHTML = translations[lang][key];
+      });
+      menuToggle.setAttribute('aria-label', lang === 'it' ? 'Apri menu' : 'Open menu');
+      themeToggle.setAttribute('aria-label', lang === 'it' ? 'Cambia tema' : 'Change theme');
+      langSelect.setAttribute('aria-label', lang === 'it' ? 'Seleziona lingua' : 'Select language');
+    }
+
+    function renderThemeIcon() {
+      themeToggle.innerHTML = theme === 'dark'
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+
+    root.setAttribute('data-theme', theme);
+    renderThemeIcon();
+    applyLanguage('it');
+
+    themeToggle.addEventListener('click', () => {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', theme);
+      renderThemeIcon();
+    });
+
+    langSelect.addEventListener('change', (e) => applyLanguage(e.target.value));
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    document.querySelectorAll('nav a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 700) nav.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
